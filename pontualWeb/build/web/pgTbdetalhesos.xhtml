@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>DetalhesOs</title>
+    </h:head>
+    <h:body>
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="Detalhes da Ordem de Serviço"/></h1>
+                <h:dataTable value="#{beanDetalheOsPecas.detalhes}" var="item">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="NrDetalhePecas"/>
+                        </f:facet>
+                        <h:outputText value="#{item.nrDetalhePecas}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="NrOsPecas"/>
+                        </f:facet>
+                        <h:outputText value="#{item.nrOsPecas}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Quantidade"/>
+                        </f:facet>
+                        <h:outputText value="#{item.quantidade}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="PrecoPeca"/>
+                        </f:facet>
+                        <h:outputText value="#{item.precoPeca}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="ComissaoPecas"/>
+                        </f:facet>
+                        <h:outputText value="#{item.comissaoPecas}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="CdPeca"/>
+                        </f:facet>
+                        <h:outputText value="#{item.cdPeca}"/>
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+

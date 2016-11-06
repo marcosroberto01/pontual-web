@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Cadastro de Balancas</title>
+    </h:head>
+    <h:body>
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="Cadastro de Balanças"/></h1>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="BalancaTipo:" for="balancaTipo" />
+                    <h:inputText id="balancaTipo" value="#{beanTbbalanca.balanca.balancaTipo}" title="BalancaTipo" />
+                    <h:outputLabel value="MarcaModelo:" for="marcaModelo" />
+                    <h:inputText id="marcaModelo" value="#{beanTbbalanca.balanca.marcaModelo}" title="MarcaModelo" />
+                    <h:outputLabel value="Plataforma:" for="plataforma" />
+                    <h:inputText id="plataforma" value="#{beanTbbalanca.balanca.plataforma}" title="Plataforma" />
+                    <h:outputLabel value="CargaMaxima:" for="cargaMaxima" />
+                    <h:inputText id="cargaMaxima" value="#{beanTbbalanca.balanca.cargaMaxima}" title="CargaMaxima" />
+                    <h:outputLabel value="NrInmetro:" for="nrInmetro" />
+                    <h:inputText id="nrInmetro" value="#{beanTbbalanca.balanca.nrInmetro}" title="NrInmetro" />
+                    <h:outputLabel value="DataFab:" for="dataFab" />
+                    <h:inputText id="dataFab" value="#{beanTbbalanca.balanca.dataFab}" title="DataFab" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="SeloReparado:" for="seloReparado" />
+                    <h:inputText id="seloReparado" value="#{beanTbbalanca.balanca.seloReparado}" title="SeloReparado" />
+                    <h:outputLabel value="NrSerie:" for="nrSerie" />
+                    <h:inputText id="nrSerie" value="#{beanTbbalanca.balanca.nrSerie}" title="NrSerie" />
+                    <h:outputLabel value="CdBalanca:" for="cdBalanca" />
+                    <h:inputText id="cdBalanca" value="#{beanTbbalanca.balanca.cdBalanca}" title="CdBalanca" required="true" requiredMessage="The CdBalanca field is required."/>
+                    <h:outputLabel value="Disponivel:" for="disponivel" />
+                    <h:inputText id="disponivel" value="#{beanTbbalanca.balanca.disponivel}" title="Disponivel" />
+                    <h:outputLabel value="Valor:" for="valor" />
+                    <h:inputText id="valor" value="#{beanTbbalanca.balanca.valor}" title="Valor" />
+                    <h:outputLabel value="CdClienteBalanca:" for="cdClienteBalanca" />
+                    <h:inputText id="cdClienteBalanca" value="#{beanTbbalanca.balanca.cdClienteBalanca}" title="CdClienteBalanca" required="true" requiredMessage="The CdClienteBalanca field is required."/>
+                </h:panelGrid>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+

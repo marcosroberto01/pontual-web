@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Cadastro de Usuarios</title>
+    </h:head>
+    <h:body>
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="Cadastro de Usuarios"/></h1>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="IdUsuario:" for="idUsuario" />
+                    <h:inputText id="idUsuario" value="#{beanUsuario.usuario.idUsuario}" title="IdUsuario" required="true" requiredMessage="The IdUsuario field is required."/>
+                    <h:outputLabel value="Usuario:" for="usuario" />
+                    <h:inputText id="usuario" value="#{beanUsuario.usuario.usuario}" title="Usuario" required="true" requiredMessage="The Usuario field is required."/>
+                    <h:outputLabel value="Senha:" for="senha" />
+                    <h:inputText id="senha" value="#{beanUsuario.usuario.senha}" title="Senha" required="true" requiredMessage="The Senha field is required."/>
+                    <h:outputLabel value="Bloqueado:" for="bloqueado" />
+                    <h:inputText id="bloqueado" value="#{beanUsuario.usuario.bloqueado}" title="Bloqueado" />
+                    <h:outputLabel value="ConfirmarSenha:" for="confirmarSenha" />
+                    <h:inputText id="confirmarSenha" value="#{beanUsuario.usuario.confirmarSenha}" title="ConfirmarSenha" required="true" requiredMessage="The ConfirmarSenha field is required."/>
+                    <h:outputLabel value="SenhaSistema:" for="senhaSistema" />
+                    <h:inputText id="senhaSistema" value="#{beanUsuario.usuario.senhaSistema}" title="SenhaSistema" required="true" requiredMessage="The SenhaSistema field is required."/>
+                </h:panelGrid>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+

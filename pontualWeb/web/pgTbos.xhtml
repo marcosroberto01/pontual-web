@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Lançamento de Ordem de Serviço</title>
+    </h:head>
+    <h:body>
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="Ordem de Serviço"/></h1>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="NrOs:" for="nrOs" />
+                    <h:inputText id="nrOs" value="#{beanTbos.ordemdeservico.nrOs}" title="NrOs" required="true" requiredMessage="The NrOs field is required."/>
+                    <h:outputLabel value="DataOs:" for="dataOs" />
+                    <h:inputText id="dataOs" value="#{beanTbos.ordemdeservico.dataOs}" title="DataOs" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="CdCliente:" for="cdCliente" />
+                    <h:inputText id="cdCliente" value="#{beanTbos.ordemdeservico.cdCliente}" title="CdCliente" />
+                    <h:outputLabel value="DefeitoInformado:" for="defeitoInformado" />
+                    <h:inputTextarea rows="4" cols="30" id="defeitoInformado" value="#{beanTbos.ordemdeservico.defeitoInformado}" title="DefeitoInformado" />
+                    <h:outputLabel value="CdBalancaCliente:" for="cdBalancaCliente" />
+                    <h:inputText id="cdBalancaCliente" value="#{beanTbos.ordemdeservico.cdBalancaCliente}" title="CdBalancaCliente" />
+                    <h:outputLabel value="CdBalancaComodato:" for="cdBalancaComodato" />
+                    <h:inputText id="cdBalancaComodato" value="#{beanTbos.ordemdeservico.cdBalancaComodato}" title="CdBalancaComodato" >
+                        <f:convertDateTime pattern="HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="Desmontagem:" for="desmontagem" />
+                    <h:inputText id="desmontagem" value="#{beanTbos.ordemdeservico.desmontagem}" title="Desmontagem" />
+                    <h:outputLabel value="ReparoEletronico:" for="reparoEletronico" />
+                    <h:inputText id="reparoEletronico" value="#{beanTbos.ordemdeservico.reparoEletronico}" title="ReparoEletronico" />
+                    <h:outputLabel value="CalibracaoPadrao:" for="calibracaoPadrao" />
+                    <h:inputText id="calibracaoPadrao" value="#{beanTbos.ordemdeservico.calibracaoPadrao}" title="CalibracaoPadrao" />
+                    <h:outputLabel value="ManutencaoPreventiva:" for="manutencaoPreventiva" />
+                    <h:inputText id="manutencaoPreventiva" value="#{beanTbos.ordemdeservico.manutencaoPreventiva}" title="ManutencaoPreventiva" />
+                    <h:outputLabel value="Pintura:" for="pintura" />
+                    <h:inputText id="pintura" value="#{beanTbos.ordemdeservico.pintura}" title="Pintura" />
+                    <h:outputLabel value="Montagem:" for="montagem" />
+                    <h:inputText id="montagem" value="#{beanTbos.ordemdeservico.montagem}" title="Montagem" />
+                    <h:outputLabel value="LimpezaQuimica:" for="limpezaQuimica" />
+                    <h:inputText id="limpezaQuimica" value="#{beanTbos.ordemdeservico.limpezaQuimica}" title="LimpezaQuimica" />
+                    <h:outputLabel value="RevisaoCelulas:" for="revisaoCelulas" />
+                    <h:inputText id="revisaoCelulas" value="#{beanTbos.ordemdeservico.revisaoCelulas}" title="RevisaoCelulas" />
+                    <h:outputLabel value="TrocaTeclado:" for="trocaTeclado" />
+                    <h:inputText id="trocaTeclado" value="#{beanTbos.ordemdeservico.trocaTeclado}" title="TrocaTeclado" />
+                    <h:outputLabel value="CalibracaoComparativa:" for="calibracaoComparativa" />
+                    <h:inputText id="calibracaoComparativa" value="#{beanTbos.ordemdeservico.calibracaoComparativa}" title="CalibracaoComparativa" />
+                    <h:outputLabel value="OutrosServicos:" for="outrosServicos" />
+                    <h:inputText id="outrosServicos" value="#{beanTbos.ordemdeservico.outrosServicos}" title="OutrosServicos" />
+                    <h:outputLabel value="Tecnico:" for="tecnico" />
+                    <h:inputText id="tecnico" value="#{beanTbos.ordemdeservico.tecnico}" title="Tecnico" />
+                    <h:outputLabel value="HoraTecnica:" for="horaTecnica" />
+                    <h:inputText id="horaTecnica" value="#{beanTbos.ordemdeservico.horaTecnica}" title="HoraTecnica" />
+                    <h:outputLabel value="ObsOrdem:" for="obsOrdem" />
+                    <h:inputTextarea rows="4" cols="30" id="obsOrdem" value="#{beanTbos.ordemdeservico.obsOrdem}" title="ObsOrdem" />
+                    <h:outputLabel value="SituacaoOrcamento:" for="situacaoOrcamento" />
+                    <h:inputText id="situacaoOrcamento" value="#{beanTbos.ordemdeservico.situacaoOrcamento}" title="SituacaoOrcamento" />
+                    <h:outputLabel value="NrRelatorioEntrada:" for="nrRelatorioEntrada" />
+                    <h:inputText id="nrRelatorioEntrada" value="#{beanTbos.ordemdeservico.nrRelatorioEntrada}" title="NrRelatorioEntrada" />
+                    <h:outputLabel value="DtGarantia:" for="dtGarantia" />
+                    <h:inputText id="dtGarantia" value="#{beanTbos.ordemdeservico.dtGarantia}" title="DtGarantia" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="FrmPgto:" for="frmPgto" />
+                    <h:inputText id="frmPgto" value="#{beanTbos.ordemdeservico.frmPgto}" title="FrmPgto" />
+                    <h:outputLabel value="VlrDesconto:" for="vlrDesconto" />
+                    <h:inputText id="vlrDesconto" value="#{beanTbos.ordemdeservico.vlrDesconto}" title="VlrDesconto" />
+                </h:panelGrid>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+

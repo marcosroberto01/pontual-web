@@ -3,7 +3,11 @@
   <persistence-unit name="pontualWebPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     <class>packEntidades.TbCliente</class>
+    <class>packEntidades.Tbusuario</class>
     <class>packEntidades.Tbos</class>
+    <class>packEntidades.Tbdetalheospecas</class>
+    <class>packEntidades.Tbpecas</class>
+    <class>packEntidades.Tbbalancas</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/bdpontualweb?zeroDateTimeBehavior=convertToNull"/>

@@ -3,10 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/MLSistemas/sisPontualWeb/pontualWeb/web/pgTbos.xhtml</file>
             <file>file:/C:/MLSistemas/sisPontualWeb/pontualWeb/src/java/packBeans/beanTbos.java</file>
             <file>file:/C:/MLSistemas/sisPontualWeb/pontualWeb/src/conf/persistence.xml</file>
-            <file>file:/C:/MLSistemas/sisPontualWeb/pontualWeb/web/Tbos.xhtml</file>
+            <file>file:/C:/MLSistemas/sisPontualWeb/pontualWeb/web/index.xhtml</file>
+            <file>file:/C:/MLSistemas/sisPontualWeb/pontualWeb/web/pgTbusuarios.xhtml</file>
+            <file>file:/C:/MLSistemas/sisPontualWeb/pontualWeb/web/pgTbpecas.xhtml</file>
+            <file>file:/C:/MLSistemas/sisPontualWeb/pontualWeb/web/pgTbbalancas.xhtml</file>
+            <file>file:/C:/MLSistemas/sisPontualWeb/pontualWeb/src/java/packEntidades/Tbusuario.java</file>
+            <file>file:/C:/MLSistemas/sisPontualWeb/pontualWeb/web/pgTbdetalhesos.xhtml</file>
+            <file>file:/C:/MLSistemas/sisPontualWeb/pontualWeb/src/java/packBeans/beanDetalheOsPecas.java</file>
+            <file>file:/C:/MLSistemas/sisPontualWeb/pontualWeb/src/java/packBeans/beanTbbalanca.java</file>
+            <file>file:/C:/MLSistemas/sisPontualWeb/pontualWeb/src/java/packBeans/beanUsuario.java</file>
+            <file>file:/C:/MLSistemas/sisPontualWeb/pontualWeb/src/java/packBeans/beanPecas.java</file>
             <file>file:/C:/MLSistemas/sisPontualWeb/pontualWeb/src/java/packBeans/beanCliente.java</file>
+            <file>file:/C:/MLSistemas/sisPontualWeb/pontualWeb/src/java/packEntidades/Tbpecas.java</file>
             <file>file:/C:/MLSistemas/sisPontualWeb/pontualWeb/web/clientes.xhtml</file>
         </group>
     </open-files>
