@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"></link>
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"></link>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <title>Cadastro de Clientes</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form prependId="false">
+                <div class="container">
+                    <h1 class="lead"><h:outputText value="Create/Edit"/></h1>
+                    <hr></hr>
+                    <div>
+                         <div class="form-group col-md-5">
+                             <p class="lead">Dados da Empresa</p>
+                             <h:outputLabel class="" value="Código" for="codCliente" />
+                             <h:inputText class="form-control" id="codCliente" value="#{beanCliente.cliente.codCliente}" title="CodCliente" required="true" requiredMessage="The CodCliente field is required."/>
+                             <h:outputLabel value="Razao Social" for="razaoSocial" />
+                             <h:inputText class="form-control" id="razaoSocial" value="#{beanCliente.cliente.razaoSocial}" title="RazaoSocial" />
+                             <h:outputLabel value="NomeFantasia:" for="nomeFantasia" />
+                             <h:inputText class="form-control" id="nomeFantasia" value="#{beanCliente.cliente.nomeFantasia}" title="NomeFantasia" />
+                             <h:outputLabel value="Representante:" for="representante" />
+                             <h:inputText class="form-control" id="representante" value="#{beanCliente.cliente.representante}" title="Representante" />
+                         </div>   
+                         <div class="form-group col-md-5">
+                             <h:outputLabel value="Cgc/Cp:" for="cgcCpf" />
+                             <h:inputText class="form-control" id="cgcCpf" value="#{beanCliente.cliente.cgcCpf}" title="CgcCpf" />
+                             <h:outputLabel value="Inscricao Estadual/RG" for="inscrEstadualRG" />
+                             <h:inputText class="form-control" id="inscrEstadualRG" value="#{beanCliente.cliente.inscrEstadualRG}" title="InscrEstadualRG" />
+                             <h:outputLabel value="TipoPessoa:" for="tipoPessoa" />
+                             <h:inputText class="form-control" id="tipoPessoa" value="#{beanCliente.cliente.tipoPessoa}" title="TipoPessoa" />
+                         </div>
+                    </div>
+                    <hr></hr>
+                    <div>
+                         <div class="form-group col-md-5">
+                             <p class="lead">Endereço</p>
+                             <h:outputLabel value="Endereco" for="endereco" />
+                             <h:inputText class="form-control" id="endereco" value="#{beanCliente.cliente.endereco}" title="Endereco" />
+                             <h:outputLabel value="Numero" for="numero" />
+                             <h:inputText class="form-control" id="numero" value="#{beanCliente.cliente.numero}" title="Numero" />
+                             <h:outputLabel value="Complemento" for="complemento" />
+                             <h:inputText class="form-control" id="complemento" value="#{beanCliente.cliente.complemento}" title="Complemento" />
+                             <h:outputLabel value="Bairro" for="bairro" />
+                         </div>   
+                         <div class="form-group col-md-5">
+                             <h:inputText class="form-control" id="bairro" value="#{beanCliente.cliente.bairro}" title="Bairro" />
+                             <h:outputLabel value="Cidade" for="cidade" />
+                             <h:inputText class="form-control" id="cidade" value="#{beanCliente.cliente.cidade}" title="Cidade" />
+                             <h:outputLabel value="Estado" for="estado" />
+                             <h:inputText class="form-control" id="estado" value="#{beanCliente.cliente.estado}" title="Estado" />
+                             <h:outputLabel value="Cep" for="cep" />
+                             <h:inputText class="form-control" id="cep" value="#{beanCliente.cliente.cep}" title="Cep" />                   
+                         </div>
+                    </div>
+                    <hr></hr>
+                    <div>
+                         <div class="form-group col-md-5">
+                             <p class="lead">Contato</p>
+                             <h:outputLabel value="Email:" for="email" />
+                              <h:inputText class="form-control" id="email" value="#{beanCliente.cliente.email}" title="Email" />
+                             <h:outputLabel value="Telefone1:" for="telefone1" />
+                             <h:inputText class="form-control" id="telefone1" value="#{beanCliente.cliente.telefone1}" title="Telefone1" />
+                             <h:outputLabel value="Telefone2:" for="telefone2" />
+                             <h:inputText class="form-control" id="telefone2" value="#{beanCliente.cliente.telefone2}" title="Telefone2" />
+                             <h:outputLabel value="Telefone3:" for="telefone3" />
+                             <h:inputText class="form-control" id="telefone3" value="#{beanCliente.cliente.telefone3}" title="Telefone3" />
+                             <h:outputLabel value="Telefone4:" for="telefone4" />
+                             <h:inputText class="form-control" id="telefone4" value="#{beanCliente.cliente.telefone4}" title="Telefone4" />
+                         </div>   
+                    </div>   
+                    <div class="form-group col-md-4">
+                         <h:outputLabel value="Observacao:" for="observacao" />
+                         <h:inputTextarea class="form-control" rows="4" cols="30" id="observacao" value="#{beanCliente.cliente.observacao}" title="Observacao" />
+                    </div>
+                     <div class="form-group col-md-12">
+                         <h:commandButton class="btn btn-default" value="Salvar" action="#{beanCliente.salvar()}"></h:commandButton>
+                    </div>
+                </div>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+
