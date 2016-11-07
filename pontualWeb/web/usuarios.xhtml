@@ -1,23 +1,23 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <script type="text/javascript" src="resources/vendor/js/jquery-3.1.1.min.js"></script>
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"></link>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"></link>
-        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
         <link rel="stylesheet" 	href="#{facesContext.externalContext.request.contextPath}/resources/css/styles.css"></link>
-
-        <title>Gerenciamento de Ordem de Serviço</title>
+        
+        <title>Cadastro de Usuarios</title>
     </h:head>
     <h:body>
         <div class="row">
             <div class="col-md-3 col-sm-2">
                 <div class="container-fluid display-table">
-                    <div class="    hidden-xs display-table-cell v-align box pull-left" id="navigation">
+                    <div class="hidden-xs display-table-cell v-align box pull-left" id="navigation">
                         <div class="logo">
                             <h:link outcome="index"><img src="#{facesContext.externalContext.request.contextPath}/resources/images/scos.png" alt="scos_logo" class="hidden-xs hidden-sm"/></h:link>
                                 <img src="#{facesContext.externalContext.request.contextPath}/resources/images/scos.png" alt="scos_logo" class="visible-xs visible-sm circle-logo"/>
@@ -38,9 +38,27 @@
             <div class="col-md-9 col-sm-10">
                 <div class="container-fluid">
                     <header>
-                        <h1 class="title">Relatório</h1>
+                        <h1 class="title">Usuários</h1>
                     </header>
                 </div>
+                <f:view>
+                    <h:form>
+                        <h:panelGrid columns="2">
+                            <h:outputLabel value="IdUsuario:" for="idUsuario" />
+                            <h:inputText id="idUsuario" value="#{beanUsuario.usuario.idUsuario}" title="IdUsuario" required="true" requiredMessage="The IdUsuario field is required."/>
+                            <h:outputLabel value="Usuario:" for="usuario" />
+                            <h:inputText id="usuario" value="#{beanUsuario.usuario.usuario}" title="Usuario" required="true" requiredMessage="The Usuario field is required."/>
+                            <h:outputLabel value="Senha:" for="senha" />
+                            <h:inputText id="senha" value="#{beanUsuario.usuario.senha}" title="Senha" required="true" requiredMessage="The Senha field is required."/>
+                            <h:outputLabel value="Bloqueado:" for="bloqueado" />
+                            <h:inputText id="bloqueado" value="#{beanUsuario.usuario.bloqueado}" title="Bloqueado" />
+                            <h:outputLabel value="ConfirmarSenha:" for="confirmarSenha" />
+                            <h:inputText id="confirmarSenha" value="#{beanUsuario.usuario.confirmarSenha}" title="ConfirmarSenha" required="true" requiredMessage="The ConfirmarSenha field is required."/>
+                            <h:outputLabel value="SenhaSistema:" for="senhaSistema" />
+                            <h:inputText id="senhaSistema" value="#{beanUsuario.usuario.senhaSistema}" title="SenhaSistema" required="true" requiredMessage="The SenhaSistema field is required."/>
+                        </h:panelGrid>
+                    </h:form>
+                </f:view>
             </div>
         </div>
     </h:body>

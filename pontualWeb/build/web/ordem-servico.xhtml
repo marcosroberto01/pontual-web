@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"></link>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"></link>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
+        <link rel="stylesheet" 	href="#{facesContext.externalContext.request.contextPath}/resources/css/styles.css"></link>        
+        
+        <title>Lançamento de Ordem de Serviço</title>
+    </h:head>
+    <h:body>
+        <div class="row">
+            <div class="col-md-3 col-sm-2">
+                <div class="container-fluid display-table">
+                    <div class="hidden-xs display-table-cell v-align box pull-left" id="navigation">
+                        <div class="logo">
+                            <h:link outcome="index"><img src="#{facesContext.externalContext.request.contextPath}/resources/images/scos.png" alt="scos_logo" class="hidden-xs hidden-sm"/></h:link>
+                                <img src="#{facesContext.externalContext.request.contextPath}/resources/images/scos.png" alt="scos_logo" class="visible-xs visible-sm circle-logo"/>
+                        </div>
+                        <div class="navi">
+                            <ul>
+                                <li><h:link outcome="clientes" value ="Clientes"/></li>
+                                <li><h:link outcome="ordem-servico" value ="Ordens de Servico"/></li>
+                                <li><h:link outcome="balancas" value ="Balanças"/></li>
+                                <li><h:link outcome="detalhes" value ="Detalhes da Ordem de Serviço"/></li>
+                                <li><h:link outcome="pecas" value ="Peças"/></li>
+                                <li><h:link outcome="usuarios" value ="Usuarios"/></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-10">
+                <div class="container-fluid">
+                    <header>
+                        <h1 class="title">Ordem de Serviço</h1>
+                    </header>
+                </div>
+                <f:view>
+                    <h:form>
+                        <h:panelGrid columns="2">
+                            <h:outputLabel value="NrOs:" for="nrOs" />
+                            <h:inputText id="nrOs" value="#{beanTbos.ordemdeservico.nrOs}" title="NrOs" required="true" requiredMessage="The NrOs field is required."/>
+                            <h:outputLabel value="DataOs:" for="dataOs" />
+                            <h:inputText id="dataOs" value="#{beanTbos.ordemdeservico.dataOs}" title="DataOs" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="CdCliente:" for="cdCliente" />
+                            <h:inputText id="cdCliente" value="#{beanTbos.ordemdeservico.cdCliente}" title="CdCliente" />
+                            <h:outputLabel value="DefeitoInformado:" for="defeitoInformado" />
+                            <h:inputTextarea rows="4" cols="30" id="defeitoInformado" value="#{beanTbos.ordemdeservico.defeitoInformado}" title="DefeitoInformado" />
+                            <h:outputLabel value="CdBalancaCliente:" for="cdBalancaCliente" />
+                            <h:inputText id="cdBalancaCliente" value="#{beanTbos.ordemdeservico.cdBalancaCliente}" title="CdBalancaCliente" />
+                            <h:outputLabel value="CdBalancaComodato:" for="cdBalancaComodato" />
+                            <h:inputText id="cdBalancaComodato" value="#{beanTbos.ordemdeservico.cdBalancaComodato}" title="CdBalancaComodato" >
+                                <f:convertDateTime pattern="HH:mm:ss" />
+                            </h:inputText>
+                            <h:outputLabel value="Desmontagem:" for="desmontagem" />
+                            <h:inputText id="desmontagem" value="#{beanTbos.ordemdeservico.desmontagem}" title="Desmontagem" />
+                            <h:outputLabel value="ReparoEletronico:" for="reparoEletronico" />
+                            <h:inputText id="reparoEletronico" value="#{beanTbos.ordemdeservico.reparoEletronico}" title="ReparoEletronico" />
+                            <h:outputLabel value="CalibracaoPadrao:" for="calibracaoPadrao" />
+                            <h:inputText id="calibracaoPadrao" value="#{beanTbos.ordemdeservico.calibracaoPadrao}" title="CalibracaoPadrao" />
+                            <h:outputLabel value="ManutencaoPreventiva:" for="manutencaoPreventiva" />
+                            <h:inputText id="manutencaoPreventiva" value="#{beanTbos.ordemdeservico.manutencaoPreventiva}" title="ManutencaoPreventiva" />
+                            <h:outputLabel value="Pintura:" for="pintura" />
+                            <h:inputText id="pintura" value="#{beanTbos.ordemdeservico.pintura}" title="Pintura" />
+                            <h:outputLabel value="Montagem:" for="montagem" />
+                            <h:inputText id="montagem" value="#{beanTbos.ordemdeservico.montagem}" title="Montagem" />
+                            <h:outputLabel value="LimpezaQuimica:" for="limpezaQuimica" />
+                            <h:inputText id="limpezaQuimica" value="#{beanTbos.ordemdeservico.limpezaQuimica}" title="LimpezaQuimica" />
+                            <h:outputLabel value="RevisaoCelulas:" for="revisaoCelulas" />
+                            <h:inputText id="revisaoCelulas" value="#{beanTbos.ordemdeservico.revisaoCelulas}" title="RevisaoCelulas" />
+                            <h:outputLabel value="TrocaTeclado:" for="trocaTeclado" />
+                            <h:inputText id="trocaTeclado" value="#{beanTbos.ordemdeservico.trocaTeclado}" title="TrocaTeclado" />
+                            <h:outputLabel value="CalibracaoComparativa:" for="calibracaoComparativa" />
+                            <h:inputText id="calibracaoComparativa" value="#{beanTbos.ordemdeservico.calibracaoComparativa}" title="CalibracaoComparativa" />
+                            <h:outputLabel value="OutrosServicos:" for="outrosServicos" />
+                            <h:inputText id="outrosServicos" value="#{beanTbos.ordemdeservico.outrosServicos}" title="OutrosServicos" />
+                            <h:outputLabel value="Tecnico:" for="tecnico" />
+                            <h:inputText id="tecnico" value="#{beanTbos.ordemdeservico.tecnico}" title="Tecnico" />
+                            <h:outputLabel value="HoraTecnica:" for="horaTecnica" />
+                            <h:inputText id="horaTecnica" value="#{beanTbos.ordemdeservico.horaTecnica}" title="HoraTecnica" />
+                            <h:outputLabel value="ObsOrdem:" for="obsOrdem" />
+                            <h:inputTextarea rows="4" cols="30" id="obsOrdem" value="#{beanTbos.ordemdeservico.obsOrdem}" title="ObsOrdem" />
+                            <h:outputLabel value="SituacaoOrcamento:" for="situacaoOrcamento" />
+                            <h:inputText id="situacaoOrcamento" value="#{beanTbos.ordemdeservico.situacaoOrcamento}" title="SituacaoOrcamento" />
+                            <h:outputLabel value="NrRelatorioEntrada:" for="nrRelatorioEntrada" />
+                            <h:inputText id="nrRelatorioEntrada" value="#{beanTbos.ordemdeservico.nrRelatorioEntrada}" title="NrRelatorioEntrada" />
+                            <h:outputLabel value="DtGarantia:" for="dtGarantia" />
+                            <h:inputText id="dtGarantia" value="#{beanTbos.ordemdeservico.dtGarantia}" title="DtGarantia" >
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:inputText>
+                            <h:outputLabel value="FrmPgto:" for="frmPgto" />
+                            <h:inputText id="frmPgto" value="#{beanTbos.ordemdeservico.frmPgto}" title="FrmPgto" />
+                            <h:outputLabel value="VlrDesconto:" for="vlrDesconto" />
+                            <h:inputText id="vlrDesconto" value="#{beanTbos.ordemdeservico.vlrDesconto}" title="VlrDesconto" />
+                        </h:panelGrid>
+                    </h:form>
+                </f:view>
+            </div>
+        </div>
+    </h:body>
+</html>
+
