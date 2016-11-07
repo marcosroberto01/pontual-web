@@ -43,16 +43,16 @@
                 </div>
                 <f:view>
                     <h:form>
-                        <h:dataTable value="#{beanDetalheOsPecas.detalhes}" var="item">
+                        <h:dataTable class="table table-striped" value="#{beanDetalheOsPecas.detalhes}" var="item">
                             <h:column>
                                 <f:facet name="header">
-                                    <h:outputText value="NrDetalhePecas"/>
+                                    <h:outputText value="Nr. Detalhe"/>
                                 </f:facet>
                                 <h:outputText value="#{item.nrDetalhePecas}"/>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
-                                    <h:outputText value="NrOsPecas"/>
+                                    <h:outputText value="Nr. OS"/>
                                 </f:facet>
                                 <h:outputText value="#{item.nrOsPecas}"/>
                             </h:column>
@@ -64,19 +64,19 @@
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
-                                    <h:outputText value="PrecoPeca"/>
+                                    <h:outputText value="Preço"/>
                                 </f:facet>
                                 <h:outputText value="#{item.precoPeca}"/>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
-                                    <h:outputText value="ComissaoPecas"/>
+                                    <h:outputText value="Comissão"/>
                                 </f:facet>
                                 <h:outputText value="#{item.comissaoPecas}"/>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
-                                    <h:outputText value="CdPeca"/>
+                                    <h:outputText value="Cod. Peça"/>
                                 </f:facet>
                                 <h:outputText value="#{item.cdPeca}"/>
                             </h:column>

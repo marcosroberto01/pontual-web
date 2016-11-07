@@ -43,12 +43,18 @@
                 </div>
                 <f:view>
                     <h:form>
-                        <h:panelGrid columns="2">
-                            <h:outputLabel value="IdPeca:" for="idPeca" />
-                            <h:inputText id="idPeca" value="#{beanPecas.peca.idPeca}" title="IdPeca" required="true" requiredMessage="The IdPeca field is required."/>
-                            <h:outputLabel value="DescricaoPeca:" for="descricaoPeca" />
-                            <h:inputText id="descricaoPeca" value="#{beanPecas.peca.descricaoPeca}" title="DescricaoPeca" required="true" requiredMessage="The DescricaoPeca field is required."/>
-                        </h:panelGrid>
+                        <div class="row">
+                            <div class="container-fluid">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                            <h:outputLabel value="Id Peça:" for="idPeca" />
+                                            <h:inputText class="form-control" id="idPeca" value="#{beanPecas.peca.idPeca}" title="IdPeca" required="true" requiredMessage="The IdPeca field is required."/>
+                                            <h:outputLabel value="Descrição:" for="descricaoPeca" />
+                                            <h:inputText class="form-control" id="descricaoPeca" value="#{beanPecas.peca.descricaoPeca}" title="DescricaoPeca" required="true" requiredMessage="The DescricaoPeca field is required."/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </h:form>
                 </f:view>
             </div>
