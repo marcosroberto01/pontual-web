@@ -17,15 +17,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Marcos
+ * @author guilherme
  */
 @Entity
 @Table(name = "tbpecas")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Peca.findAll", query = "SELECT t FROM Tbpecas t"),
-    @NamedQuery(name = "Peca.findByIdPeca", query = "SELECT t FROM Tbpecas t WHERE t.idPeca = :idPeca"),
-    @NamedQuery(name = "Peca.findByDescricaoPeca", query = "SELECT t FROM Tbpecas t WHERE t.descricaoPeca = :descricaoPeca")})
+    @NamedQuery(name = "Peca.findAll", query = "SELECT p FROM Peca p")
+    , @NamedQuery(name = "Peca.findByIdPeca", query = "SELECT p FROM Peca p WHERE p.idPeca = :idPeca")
+    , @NamedQuery(name = "Peca.findByDescricaoPeca", query = "SELECT p FROM Peca p WHERE p.descricaoPeca = :descricaoPeca")})
 public class Peca implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -87,7 +87,7 @@ public class Peca implements Serializable {
 
     @Override
     public String toString() {
-        return "packEntidades.Tbpecas[ idPeca=" + idPeca + " ]";
+        return "entidades.Peca[ idPeca=" + idPeca + " ]";
     }
     
 }

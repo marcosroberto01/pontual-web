@@ -17,20 +17,20 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Marcos
+ * @author guilherme
  */
 @Entity
 @Table(name = "tbusuario")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Usuario.findAll", query = "SELECT t FROM Tbusuario t"),
-    @NamedQuery(name = "Usuario.findByIdUsuario", query = "SELECT t FROM Tbusuario t WHERE t.idUsuario = :idUsuario"),
-    @NamedQuery(name = "Usuario.findByUsuario", query = "SELECT t FROM Tbusuario t WHERE t.usuario = :usuario"),
-    @NamedQuery(name = "Usuario.findBySenha", query = "SELECT t FROM Tbusuario t WHERE t.senha = :senha"),
-    @NamedQuery(name = "Usuario.findByBloqueado", query = "SELECT t FROM Tbusuario t WHERE t.bloqueado = :bloqueado"),
-    @NamedQuery(name = "Usuario.findByConfirmarSenha", query = "SELECT t FROM Tbusuario t WHERE t.confirmarSenha = :confirmarSenha"),
-    @NamedQuery(name = "Usuario.findBySenhaSistema", query = "SELECT t FROM Tbusuario t WHERE t.senhaSistema = :senhaSistema")})
-public class Usuario implements Serializable{
+    @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u")
+    , @NamedQuery(name = "Usuario.findByIdUsuario", query = "SELECT u FROM Usuario u WHERE u.idUsuario = :idUsuario")
+    , @NamedQuery(name = "Usuario.findByUsuario", query = "SELECT u FROM Usuario u WHERE u.usuario = :usuario")
+    , @NamedQuery(name = "Usuario.findBySenha", query = "SELECT u FROM Usuario u WHERE u.senha = :senha")
+    , @NamedQuery(name = "Usuario.findByBloqueado", query = "SELECT u FROM Usuario u WHERE u.bloqueado = :bloqueado")
+    , @NamedQuery(name = "Usuario.findByConfirmarSenha", query = "SELECT u FROM Usuario u WHERE u.confirmarSenha = :confirmarSenha")
+    , @NamedQuery(name = "Usuario.findBySenhaSistema", query = "SELECT u FROM Usuario u WHERE u.senhaSistema = :senhaSistema")})
+public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -137,7 +137,7 @@ public class Usuario implements Serializable{
 
     @Override
     public String toString() {
-        return "packEntidades.Tbusuario[ idUsuario=" + idUsuario + " ]";
+        return "entidades.Usuario[ idUsuario=" + idUsuario + " ]";
     }
     
 }

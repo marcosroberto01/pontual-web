@@ -17,19 +17,19 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Marcos
+ * @author guilherme
  */
 @Entity
 @Table(name = "tbdetalheospecas")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "DetalheOrdemServico.findAll", query = "SELECT t FROM Tbdetalheospecas t"),
-    @NamedQuery(name = "DetalheOrdemServico.findByNrDetalhePecas", query = "SELECT t FROM Tbdetalheospecas t WHERE t.nrDetalhePecas = :nrDetalhePecas"),
-    @NamedQuery(name = "DetalheOrdemServico.findByNrOsPecas", query = "SELECT t FROM Tbdetalheospecas t WHERE t.nrOsPecas = :nrOsPecas"),
-    @NamedQuery(name = "DetalheOrdemServico.findByQuantidade", query = "SELECT t FROM Tbdetalheospecas t WHERE t.quantidade = :quantidade"),
-    @NamedQuery(name = "DetalheOrdemServico.findByPrecoPeca", query = "SELECT t FROM Tbdetalheospecas t WHERE t.precoPeca = :precoPeca"),
-    @NamedQuery(name = "DetalheOrdemServico.findByComissaoPecas", query = "SELECT t FROM Tbdetalheospecas t WHERE t.comissaoPecas = :comissaoPecas"),
-    @NamedQuery(name = "DetalheOrdemServico.findByCdPeca", query = "SELECT t FROM Tbdetalheospecas t WHERE t.cdPeca = :cdPeca")})
+    @NamedQuery(name = "DetalheOrdemServico.findAll", query = "SELECT d FROM DetalheOrdemServico d")
+    , @NamedQuery(name = "DetalheOrdemServico.findByNrDetalhePecas", query = "SELECT d FROM DetalheOrdemServico d WHERE d.nrDetalhePecas = :nrDetalhePecas")
+    , @NamedQuery(name = "DetalheOrdemServico.findByNrOsPecas", query = "SELECT d FROM DetalheOrdemServico d WHERE d.nrOsPecas = :nrOsPecas")
+    , @NamedQuery(name = "DetalheOrdemServico.findByQuantidade", query = "SELECT d FROM DetalheOrdemServico d WHERE d.quantidade = :quantidade")
+    , @NamedQuery(name = "DetalheOrdemServico.findByPrecoPeca", query = "SELECT d FROM DetalheOrdemServico d WHERE d.precoPeca = :precoPeca")
+    , @NamedQuery(name = "DetalheOrdemServico.findByComissaoPecas", query = "SELECT d FROM DetalheOrdemServico d WHERE d.comissaoPecas = :comissaoPecas")
+    , @NamedQuery(name = "DetalheOrdemServico.findByCdPeca", query = "SELECT d FROM DetalheOrdemServico d WHERE d.cdPeca = :cdPeca")})
 public class DetalheOrdemServico implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -138,7 +138,7 @@ public class DetalheOrdemServico implements Serializable {
 
     @Override
     public String toString() {
-        return "packEntidades.Tbdetalheospecas[ nrDetalhePecas=" + nrDetalhePecas + " ]";
+        return "entidades.DetalheOrdemServico[ nrDetalhePecas=" + nrDetalhePecas + " ]";
     }
     
 }

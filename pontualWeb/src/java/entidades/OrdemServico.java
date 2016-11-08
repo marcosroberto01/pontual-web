@@ -21,36 +21,36 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Marcos
+ * @author guilherme
  */
 @Entity
 @Table(name = "tbos")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "OrdemServico.findAll", query = "SELECT t FROM Tbos t"),
-    @NamedQuery(name = "OrdemServico.findByNrOs", query = "SELECT t FROM Tbos t WHERE t.nrOs = :nrOs"),
-    @NamedQuery(name = "OrdemServico.findByDataOs", query = "SELECT t FROM Tbos t WHERE t.dataOs = :dataOs"),
-    @NamedQuery(name = "OrdemServico.findByCdCliente", query = "SELECT t FROM Tbos t WHERE t.cdCliente = :cdCliente"),
-    @NamedQuery(name = "OrdemServico.findByCdBalancaCliente", query = "SELECT t FROM Tbos t WHERE t.cdBalancaCliente = :cdBalancaCliente"),
-    @NamedQuery(name = "OrdemServico.findByCdBalancaComodato", query = "SELECT t FROM Tbos t WHERE t.cdBalancaComodato = :cdBalancaComodato"),
-    @NamedQuery(name = "OrdemServico.findByDesmontagem", query = "SELECT t FROM Tbos t WHERE t.desmontagem = :desmontagem"),
-    @NamedQuery(name = "OrdemServico.findByReparoEletronico", query = "SELECT t FROM Tbos t WHERE t.reparoEletronico = :reparoEletronico"),
-    @NamedQuery(name = "OrdemServico.findByCalibracaoPadrao", query = "SELECT t FROM Tbos t WHERE t.calibracaoPadrao = :calibracaoPadrao"),
-    @NamedQuery(name = "OrdemServico.findByManutencaoPreventiva", query = "SELECT t FROM Tbos t WHERE t.manutencaoPreventiva = :manutencaoPreventiva"),
-    @NamedQuery(name = "OrdemServico.findByPintura", query = "SELECT t FROM Tbos t WHERE t.pintura = :pintura"),
-    @NamedQuery(name = "OrdemServico.findByMontagem", query = "SELECT t FROM Tbos t WHERE t.montagem = :montagem"),
-    @NamedQuery(name = "OrdemServico.findByLimpezaQuimica", query = "SELECT t FROM Tbos t WHERE t.limpezaQuimica = :limpezaQuimica"),
-    @NamedQuery(name = "OrdemServico.findByRevisaoCelulas", query = "SELECT t FROM Tbos t WHERE t.revisaoCelulas = :revisaoCelulas"),
-    @NamedQuery(name = "OrdemServico.findByTrocaTeclado", query = "SELECT t FROM Tbos t WHERE t.trocaTeclado = :trocaTeclado"),
-    @NamedQuery(name = "OrdemServico.findByCalibracaoComparativa", query = "SELECT t FROM Tbos t WHERE t.calibracaoComparativa = :calibracaoComparativa"),
-    @NamedQuery(name = "OrdemServico.findByOutrosServicos", query = "SELECT t FROM Tbos t WHERE t.outrosServicos = :outrosServicos"),
-    @NamedQuery(name = "OrdemServico.findByTecnico", query = "SELECT t FROM Tbos t WHERE t.tecnico = :tecnico"),
-    @NamedQuery(name = "OrdemServico.findByHoraTecnica", query = "SELECT t FROM Tbos t WHERE t.horaTecnica = :horaTecnica"),
-    @NamedQuery(name = "OrdemServico.findBySituacaoOrcamento", query = "SELECT t FROM Tbos t WHERE t.situacaoOrcamento = :situacaoOrcamento"),
-    @NamedQuery(name = "OrdemServico.findByNrRelatorioEntrada", query = "SELECT t FROM Tbos t WHERE t.nrRelatorioEntrada = :nrRelatorioEntrada"),
-    @NamedQuery(name = "OrdemServico.findByDtGarantia", query = "SELECT t FROM Tbos t WHERE t.dtGarantia = :dtGarantia"),
-    @NamedQuery(name = "OrdemServico.findByFrmPgto", query = "SELECT t FROM Tbos t WHERE t.frmPgto = :frmPgto"),
-    @NamedQuery(name = "OrdemServico.findByVlrDesconto", query = "SELECT t FROM Tbos t WHERE t.vlrDesconto = :vlrDesconto")})
+    @NamedQuery(name = "OrdemServico.findAll", query = "SELECT o FROM OrdemServico o")
+    , @NamedQuery(name = "OrdemServico.findByNrOs", query = "SELECT o FROM OrdemServico o WHERE o.nrOs = :nrOs")
+    , @NamedQuery(name = "OrdemServico.findByDataOs", query = "SELECT o FROM OrdemServico o WHERE o.dataOs = :dataOs")
+    , @NamedQuery(name = "OrdemServico.findByCdCliente", query = "SELECT o FROM OrdemServico o WHERE o.cdCliente = :cdCliente")
+    , @NamedQuery(name = "OrdemServico.findByCdBalancaCliente", query = "SELECT o FROM OrdemServico o WHERE o.cdBalancaCliente = :cdBalancaCliente")
+    , @NamedQuery(name = "OrdemServico.findByCdBalancaComodato", query = "SELECT o FROM OrdemServico o WHERE o.cdBalancaComodato = :cdBalancaComodato")
+    , @NamedQuery(name = "OrdemServico.findByDesmontagem", query = "SELECT o FROM OrdemServico o WHERE o.desmontagem = :desmontagem")
+    , @NamedQuery(name = "OrdemServico.findByReparoEletronico", query = "SELECT o FROM OrdemServico o WHERE o.reparoEletronico = :reparoEletronico")
+    , @NamedQuery(name = "OrdemServico.findByCalibracaoPadrao", query = "SELECT o FROM OrdemServico o WHERE o.calibracaoPadrao = :calibracaoPadrao")
+    , @NamedQuery(name = "OrdemServico.findByManutencaoPreventiva", query = "SELECT o FROM OrdemServico o WHERE o.manutencaoPreventiva = :manutencaoPreventiva")
+    , @NamedQuery(name = "OrdemServico.findByPintura", query = "SELECT o FROM OrdemServico o WHERE o.pintura = :pintura")
+    , @NamedQuery(name = "OrdemServico.findByMontagem", query = "SELECT o FROM OrdemServico o WHERE o.montagem = :montagem")
+    , @NamedQuery(name = "OrdemServico.findByLimpezaQuimica", query = "SELECT o FROM OrdemServico o WHERE o.limpezaQuimica = :limpezaQuimica")
+    , @NamedQuery(name = "OrdemServico.findByRevisaoCelulas", query = "SELECT o FROM OrdemServico o WHERE o.revisaoCelulas = :revisaoCelulas")
+    , @NamedQuery(name = "OrdemServico.findByTrocaTeclado", query = "SELECT o FROM OrdemServico o WHERE o.trocaTeclado = :trocaTeclado")
+    , @NamedQuery(name = "OrdemServico.findByCalibracaoComparativa", query = "SELECT o FROM OrdemServico o WHERE o.calibracaoComparativa = :calibracaoComparativa")
+    , @NamedQuery(name = "OrdemServico.findByOutrosServicos", query = "SELECT o FROM OrdemServico o WHERE o.outrosServicos = :outrosServicos")
+    , @NamedQuery(name = "OrdemServico.findByTecnico", query = "SELECT o FROM OrdemServico o WHERE o.tecnico = :tecnico")
+    , @NamedQuery(name = "OrdemServico.findByHoraTecnica", query = "SELECT o FROM OrdemServico o WHERE o.horaTecnica = :horaTecnica")
+    , @NamedQuery(name = "OrdemServico.findBySituacaoOrcamento", query = "SELECT o FROM OrdemServico o WHERE o.situacaoOrcamento = :situacaoOrcamento")
+    , @NamedQuery(name = "OrdemServico.findByNrRelatorioEntrada", query = "SELECT o FROM OrdemServico o WHERE o.nrRelatorioEntrada = :nrRelatorioEntrada")
+    , @NamedQuery(name = "OrdemServico.findByDtGarantia", query = "SELECT o FROM OrdemServico o WHERE o.dtGarantia = :dtGarantia")
+    , @NamedQuery(name = "OrdemServico.findByFrmPgto", query = "SELECT o FROM OrdemServico o WHERE o.frmPgto = :frmPgto")
+    , @NamedQuery(name = "OrdemServico.findByVlrDesconto", query = "SELECT o FROM OrdemServico o WHERE o.vlrDesconto = :vlrDesconto")})
 public class OrdemServico implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -342,7 +342,7 @@ public class OrdemServico implements Serializable {
 
     @Override
     public String toString() {
-        return "packEntidades.Tbos[ nrOs=" + nrOs + " ]";
+        return "entidades.OrdemServico[ nrOs=" + nrOs + " ]";
     }
     
 }
