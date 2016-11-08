@@ -24,26 +24,26 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "tbCliente")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "TbCliente.findAll", query = "SELECT t FROM TbCliente t"),
-    @NamedQuery(name = "TbCliente.findByCodCliente", query = "SELECT t FROM TbCliente t WHERE t.codCliente = :codCliente"),
-    @NamedQuery(name = "TbCliente.findByRazaoSocial", query = "SELECT t FROM TbCliente t WHERE t.razaoSocial = :razaoSocial"),
-    @NamedQuery(name = "TbCliente.findByCgcCpf", query = "SELECT t FROM TbCliente t WHERE t.cgcCpf = :cgcCpf"),
-    @NamedQuery(name = "TbCliente.findByInscrEstadualRG", query = "SELECT t FROM TbCliente t WHERE t.inscrEstadualRG = :inscrEstadualRG"),
-    @NamedQuery(name = "TbCliente.findByEndereco", query = "SELECT t FROM TbCliente t WHERE t.endereco = :endereco"),
-    @NamedQuery(name = "TbCliente.findByNumero", query = "SELECT t FROM TbCliente t WHERE t.numero = :numero"),
-    @NamedQuery(name = "TbCliente.findByComplemento", query = "SELECT t FROM TbCliente t WHERE t.complemento = :complemento"),
-    @NamedQuery(name = "TbCliente.findByBairro", query = "SELECT t FROM TbCliente t WHERE t.bairro = :bairro"),
-    @NamedQuery(name = "TbCliente.findByCidade", query = "SELECT t FROM TbCliente t WHERE t.cidade = :cidade"),
-    @NamedQuery(name = "TbCliente.findByEstado", query = "SELECT t FROM TbCliente t WHERE t.estado = :estado"),
-    @NamedQuery(name = "TbCliente.findByCep", query = "SELECT t FROM TbCliente t WHERE t.cep = :cep"),
-    @NamedQuery(name = "TbCliente.findByTelefone1", query = "SELECT t FROM TbCliente t WHERE t.telefone1 = :telefone1"),
-    @NamedQuery(name = "TbCliente.findByTelefone2", query = "SELECT t FROM TbCliente t WHERE t.telefone2 = :telefone2"),
-    @NamedQuery(name = "TbCliente.findByTelefone3", query = "SELECT t FROM TbCliente t WHERE t.telefone3 = :telefone3"),
-    @NamedQuery(name = "TbCliente.findByTelefone4", query = "SELECT t FROM TbCliente t WHERE t.telefone4 = :telefone4"),
-    @NamedQuery(name = "TbCliente.findByRepresentante", query = "SELECT t FROM TbCliente t WHERE t.representante = :representante"),
-    @NamedQuery(name = "TbCliente.findByNomeFantasia", query = "SELECT t FROM TbCliente t WHERE t.nomeFantasia = :nomeFantasia"),
-    @NamedQuery(name = "TbCliente.findByTipoPessoa", query = "SELECT t FROM TbCliente t WHERE t.tipoPessoa = :tipoPessoa"),
-    @NamedQuery(name = "TbCliente.findByEmail", query = "SELECT t FROM TbCliente t WHERE t.email = :email")})
+    @NamedQuery(name = "Cliente.findAll", query = "SELECT t FROM TbCliente t"),
+    @NamedQuery(name = "Cliente.findByCodCliente", query = "SELECT t FROM TbCliente t WHERE t.codCliente = :codCliente"),
+    @NamedQuery(name = "Cliente.findByRazaoSocial", query = "SELECT t FROM TbCliente t WHERE t.razaoSocial = :razaoSocial"),
+    @NamedQuery(name = "Cliente.findByCgcCpf", query = "SELECT t FROM TbCliente t WHERE t.cgcCpf = :cgcCpf"),
+    @NamedQuery(name = "Cliente.findByInscrEstadualRG", query = "SELECT t FROM TbCliente t WHERE t.inscrEstadualRG = :inscrEstadualRG"),
+    @NamedQuery(name = "Cliente.findByEndereco", query = "SELECT t FROM TbCliente t WHERE t.endereco = :endereco"),
+    @NamedQuery(name = "Cliente.findByNumero", query = "SELECT t FROM TbCliente t WHERE t.numero = :numero"),
+    @NamedQuery(name = "Cliente.findByComplemento", query = "SELECT t FROM TbCliente t WHERE t.complemento = :complemento"),
+    @NamedQuery(name = "Cliente.findByBairro", query = "SELECT t FROM TbCliente t WHERE t.bairro = :bairro"),
+    @NamedQuery(name = "Cliente.findByCidade", query = "SELECT t FROM TbCliente t WHERE t.cidade = :cidade"),
+    @NamedQuery(name = "Cliente.findByEstado", query = "SELECT t FROM TbCliente t WHERE t.estado = :estado"),
+    @NamedQuery(name = "Cliente.findByCep", query = "SELECT t FROM TbCliente t WHERE t.cep = :cep"),
+    @NamedQuery(name = "Cliente.findByTelefone1", query = "SELECT t FROM TbCliente t WHERE t.telefone1 = :telefone1"),
+    @NamedQuery(name = "Cliente.findByTelefone2", query = "SELECT t FROM TbCliente t WHERE t.telefone2 = :telefone2"),
+    @NamedQuery(name = "Cliente.findByTelefone3", query = "SELECT t FROM TbCliente t WHERE t.telefone3 = :telefone3"),
+    @NamedQuery(name = "Cliente.findByTelefone4", query = "SELECT t FROM TbCliente t WHERE t.telefone4 = :telefone4"),
+    @NamedQuery(name = "Cliente.findByRepresentante", query = "SELECT t FROM TbCliente t WHERE t.representante = :representante"),
+    @NamedQuery(name = "Cliente.findByNomeFantasia", query = "SELECT t FROM TbCliente t WHERE t.nomeFantasia = :nomeFantasia"),
+    @NamedQuery(name = "Cliente.findByTipoPessoa", query = "SELECT t FROM TbCliente t WHERE t.tipoPessoa = :tipoPessoa"),
+    @NamedQuery(name = "Cliente.findByEmail", query = "SELECT t FROM TbCliente t WHERE t.email = :email")})
 public class Cliente implements Serializable {
 
     private static final long serialVersionUID = 1L;

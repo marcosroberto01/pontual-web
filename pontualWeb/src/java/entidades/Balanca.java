@@ -26,19 +26,19 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "tbbalancas")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Tbbalancas.findAll", query = "SELECT t FROM Tbbalancas t"),
-    @NamedQuery(name = "Tbbalancas.findByBalancaTipo", query = "SELECT t FROM Tbbalancas t WHERE t.balancaTipo = :balancaTipo"),
-    @NamedQuery(name = "Tbbalancas.findByMarcaModelo", query = "SELECT t FROM Tbbalancas t WHERE t.marcaModelo = :marcaModelo"),
-    @NamedQuery(name = "Tbbalancas.findByPlataforma", query = "SELECT t FROM Tbbalancas t WHERE t.plataforma = :plataforma"),
-    @NamedQuery(name = "Tbbalancas.findByCargaMaxima", query = "SELECT t FROM Tbbalancas t WHERE t.cargaMaxima = :cargaMaxima"),
-    @NamedQuery(name = "Tbbalancas.findByNrInmetro", query = "SELECT t FROM Tbbalancas t WHERE t.nrInmetro = :nrInmetro"),
-    @NamedQuery(name = "Tbbalancas.findByDataFab", query = "SELECT t FROM Tbbalancas t WHERE t.dataFab = :dataFab"),
-    @NamedQuery(name = "Tbbalancas.findBySeloReparado", query = "SELECT t FROM Tbbalancas t WHERE t.seloReparado = :seloReparado"),
-    @NamedQuery(name = "Tbbalancas.findByNrSerie", query = "SELECT t FROM Tbbalancas t WHERE t.nrSerie = :nrSerie"),
-    @NamedQuery(name = "Tbbalancas.findByCdBalanca", query = "SELECT t FROM Tbbalancas t WHERE t.cdBalanca = :cdBalanca"),
-    @NamedQuery(name = "Tbbalancas.findByDisponivel", query = "SELECT t FROM Tbbalancas t WHERE t.disponivel = :disponivel"),
-    @NamedQuery(name = "Tbbalancas.findByValor", query = "SELECT t FROM Tbbalancas t WHERE t.valor = :valor"),
-    @NamedQuery(name = "Tbbalancas.findByCdClienteBalanca", query = "SELECT t FROM Tbbalancas t WHERE t.cdClienteBalanca = :cdClienteBalanca")})
+    @NamedQuery(name = "Balanca.findAll", query = "SELECT t FROM Tbbalancas t"),
+    @NamedQuery(name = "Balanca.findByBalancaTipo", query = "SELECT t FROM Tbbalancas t WHERE t.balancaTipo = :balancaTipo"),
+    @NamedQuery(name = "Balanca.findByMarcaModelo", query = "SELECT t FROM Tbbalancas t WHERE t.marcaModelo = :marcaModelo"),
+    @NamedQuery(name = "Balanca.findByPlataforma", query = "SELECT t FROM Tbbalancas t WHERE t.plataforma = :plataforma"),
+    @NamedQuery(name = "Balanca.findByCargaMaxima", query = "SELECT t FROM Tbbalancas t WHERE t.cargaMaxima = :cargaMaxima"),
+    @NamedQuery(name = "Balanca.findByNrInmetro", query = "SELECT t FROM Tbbalancas t WHERE t.nrInmetro = :nrInmetro"),
+    @NamedQuery(name = "Balanca.findByDataFab", query = "SELECT t FROM Tbbalancas t WHERE t.dataFab = :dataFab"),
+    @NamedQuery(name = "Balanca.findBySeloReparado", query = "SELECT t FROM Tbbalancas t WHERE t.seloReparado = :seloReparado"),
+    @NamedQuery(name = "Balanca.findByNrSerie", query = "SELECT t FROM Tbbalancas t WHERE t.nrSerie = :nrSerie"),
+    @NamedQuery(name = "Balanca.findByCdBalanca", query = "SELECT t FROM Tbbalancas t WHERE t.cdBalanca = :cdBalanca"),
+    @NamedQuery(name = "Balanca.findByDisponivel", query = "SELECT t FROM Tbbalancas t WHERE t.disponivel = :disponivel"),
+    @NamedQuery(name = "Balanca.findByValor", query = "SELECT t FROM Tbbalancas t WHERE t.valor = :valor"),
+    @NamedQuery(name = "Balanca.findByCdClienteBalanca", query = "SELECT t FROM Tbbalancas t WHERE t.cdClienteBalanca = :cdClienteBalanca")})
 public class Balanca implements Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -23,13 +23,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "tbusuario")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Tbusuario.findAll", query = "SELECT t FROM Tbusuario t"),
-    @NamedQuery(name = "Tbusuario.findByIdUsuario", query = "SELECT t FROM Tbusuario t WHERE t.idUsuario = :idUsuario"),
-    @NamedQuery(name = "Tbusuario.findByUsuario", query = "SELECT t FROM Tbusuario t WHERE t.usuario = :usuario"),
-    @NamedQuery(name = "Tbusuario.findBySenha", query = "SELECT t FROM Tbusuario t WHERE t.senha = :senha"),
-    @NamedQuery(name = "Tbusuario.findByBloqueado", query = "SELECT t FROM Tbusuario t WHERE t.bloqueado = :bloqueado"),
-    @NamedQuery(name = "Tbusuario.findByConfirmarSenha", query = "SELECT t FROM Tbusuario t WHERE t.confirmarSenha = :confirmarSenha"),
-    @NamedQuery(name = "Tbusuario.findBySenhaSistema", query = "SELECT t FROM Tbusuario t WHERE t.senhaSistema = :senhaSistema")})
+    @NamedQuery(name = "Usuario.findAll", query = "SELECT t FROM Tbusuario t"),
+    @NamedQuery(name = "Usuario.findByIdUsuario", query = "SELECT t FROM Tbusuario t WHERE t.idUsuario = :idUsuario"),
+    @NamedQuery(name = "Usuario.findByUsuario", query = "SELECT t FROM Tbusuario t WHERE t.usuario = :usuario"),
+    @NamedQuery(name = "Usuario.findBySenha", query = "SELECT t FROM Tbusuario t WHERE t.senha = :senha"),
+    @NamedQuery(name = "Usuario.findByBloqueado", query = "SELECT t FROM Tbusuario t WHERE t.bloqueado = :bloqueado"),
+    @NamedQuery(name = "Usuario.findByConfirmarSenha", query = "SELECT t FROM Tbusuario t WHERE t.confirmarSenha = :confirmarSenha"),
+    @NamedQuery(name = "Usuario.findBySenhaSistema", query = "SELECT t FROM Tbusuario t WHERE t.senhaSistema = :senhaSistema")})
 public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;

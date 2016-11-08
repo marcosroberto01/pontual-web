@@ -23,13 +23,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "tbdetalheospecas")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Tbdetalheospecas.findAll", query = "SELECT t FROM Tbdetalheospecas t"),
-    @NamedQuery(name = "Tbdetalheospecas.findByNrDetalhePecas", query = "SELECT t FROM Tbdetalheospecas t WHERE t.nrDetalhePecas = :nrDetalhePecas"),
-    @NamedQuery(name = "Tbdetalheospecas.findByNrOsPecas", query = "SELECT t FROM Tbdetalheospecas t WHERE t.nrOsPecas = :nrOsPecas"),
-    @NamedQuery(name = "Tbdetalheospecas.findByQuantidade", query = "SELECT t FROM Tbdetalheospecas t WHERE t.quantidade = :quantidade"),
-    @NamedQuery(name = "Tbdetalheospecas.findByPrecoPeca", query = "SELECT t FROM Tbdetalheospecas t WHERE t.precoPeca = :precoPeca"),
-    @NamedQuery(name = "Tbdetalheospecas.findByComissaoPecas", query = "SELECT t FROM Tbdetalheospecas t WHERE t.comissaoPecas = :comissaoPecas"),
-    @NamedQuery(name = "Tbdetalheospecas.findByCdPeca", query = "SELECT t FROM Tbdetalheospecas t WHERE t.cdPeca = :cdPeca")})
+    @NamedQuery(name = "DetalheOrdemServico.findAll", query = "SELECT t FROM Tbdetalheospecas t"),
+    @NamedQuery(name = "DetalheOrdemServico.findByNrDetalhePecas", query = "SELECT t FROM Tbdetalheospecas t WHERE t.nrDetalhePecas = :nrDetalhePecas"),
+    @NamedQuery(name = "DetalheOrdemServico.findByNrOsPecas", query = "SELECT t FROM Tbdetalheospecas t WHERE t.nrOsPecas = :nrOsPecas"),
+    @NamedQuery(name = "DetalheOrdemServico.findByQuantidade", query = "SELECT t FROM Tbdetalheospecas t WHERE t.quantidade = :quantidade"),
+    @NamedQuery(name = "DetalheOrdemServico.findByPrecoPeca", query = "SELECT t FROM Tbdetalheospecas t WHERE t.precoPeca = :precoPeca"),
+    @NamedQuery(name = "DetalheOrdemServico.findByComissaoPecas", query = "SELECT t FROM Tbdetalheospecas t WHERE t.comissaoPecas = :comissaoPecas"),
+    @NamedQuery(name = "DetalheOrdemServico.findByCdPeca", query = "SELECT t FROM Tbdetalheospecas t WHERE t.cdPeca = :cdPeca")})
 public class DetalheOrdemServico implements Serializable {
 
     private static final long serialVersionUID = 1L;
