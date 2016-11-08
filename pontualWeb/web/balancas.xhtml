@@ -4,11 +4,11 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
+        <script src="#{facesContext.externalContext.request.contextPath}/resources/vendor/js/jquery-3.1.1.min.js"></script>
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"></link>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"></link>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        
         <link rel="stylesheet" 	href="#{facesContext.externalContext.request.contextPath}/resources/css/styles.css"></link>
         
         <title>Cadastro de Balancas</title>
@@ -41,46 +41,61 @@
                         <h1 class="title">Balanças</h1>
                     </header>
                 </div>
-                <f:view>
-                    <h:form>
-                        <div class="row">
-                            <div class="container-fluid">
-                                <div class="form-group col-md-12">
-                                    <div class="col-md-6">
-                                        <h:outputLabel value="Balanca Tipo:" for="balancaTipo" />
-                                        <h:inputText class="form-control" id="balancaTipo" value="#{beanTbbalanca.balanca.balancaTipo}" title="BalancaTipo" />
-                                        <h:outputLabel value="Marca Modelo:" for="marcaModelo" />
-                                        <h:inputText class="form-control" id="marcaModelo" value="#{beanTbbalanca.balanca.marcaModelo}" title="MarcaModelo" />
-                                        <h:outputLabel value="Plataforma:" for="plataforma" />
-                                        <h:inputText class="form-control" id="plataforma" value="#{beanTbbalanca.balanca.plataforma}" title="Plataforma" />
-                                        <h:outputLabel value="Carga Maxima:" for="cargaMaxima" />
-                                        <h:inputText class="form-control" id="cargaMaxima" value="#{beanTbbalanca.balanca.cargaMaxima}" title="CargaMaxima" />
-                                        <h:outputLabel value="Nr. Inmetro:" for="nrInmetro" />
-                                        <h:inputText class="form-control" id="nrInmetro" value="#{beanTbbalanca.balanca.nrInmetro}" title="NrInmetro" />
-                                        <h:outputLabel value="Data Fabricação:" for="dataFab" />
-                                        <h:inputText class="form-control" id="dataFab" value="#{beanTbbalanca.balanca.dataFab}" title="DataFab" >
-                                            <f:convertDateTime pattern="MM/dd/yyyy" />
-                                        </h:inputText>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h:outputLabel value="Selo Reparado:" for="seloReparado" />
-                                        <h:inputText class="form-control" id="seloReparado" value="#{beanTbbalanca.balanca.seloReparado}" title="SeloReparado" />
-                                        <h:outputLabel value="Nr. Serie:" for="nrSerie" />
-                                        <h:inputText class="form-control" id="nrSerie" value="#{beanTbbalanca.balanca.nrSerie}" title="NrSerie" />
-                                        <h:outputLabel value="Cod. Balanca:" for="cdBalanca" />
-                                        <h:inputText class="form-control" id="cdBalanca" value="#{beanTbbalanca.balanca.cdBalanca}" title="CdBalanca" required="true" requiredMessage="The CdBalanca field is required."/>
-                                        <h:outputLabel value="Disponivel:" for="disponivel" />
-                                        <h:inputText class="form-control" id="disponivel" value="#{beanTbbalanca.balanca.disponivel}" title="Disponivel" />
-                                        <h:outputLabel value="Valor:" for="valor" />
-                                        <h:inputText class="form-control" id="valor" value="#{beanTbbalanca.balanca.valor}" title="Valor" />
-                                        <h:outputLabel value="Cod. Cliente-Balança:" for="cdClienteBalanca" />
-                                        <h:inputText class="form-control" id="cdClienteBalanca" value="#{beanTbbalanca.balanca.cdClienteBalanca}" title="CdClienteBalanca" required="true" requiredMessage="The CdClienteBalanca field is required."/>
+                <div>
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                      <li role="presentation" class="active"><a href="#consulta" aria-controls="consulta" role="tab" data-toggle="tab">Consulta</a></li>
+                      <li role="presentation"><a href="#cadastro" aria-controls="cadastro" role="tab" data-toggle="tab">Cadastro</a></li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane" id="cadastro">
+                            <f:view>
+                            <h:form>
+                                <div class="row">
+                                    <div class="container-fluid">
+                                        <div class="form-group col-md-12">
+                                            <div class="col-md-6">
+                                                <h:outputLabel value="Balanca Tipo:" for="balancaTipo" />
+                                                <h:inputText class="form-control" id="balancaTipo" value="#{beanTbbalanca.balanca.balancaTipo}" title="BalancaTipo" />
+                                                <h:outputLabel value="Marca Modelo:" for="marcaModelo" />
+                                                <h:inputText class="form-control" id="marcaModelo" value="#{beanTbbalanca.balanca.marcaModelo}" title="MarcaModelo" />
+                                                <h:outputLabel value="Plataforma:" for="plataforma" />
+                                                <h:inputText class="form-control" id="plataforma" value="#{beanTbbalanca.balanca.plataforma}" title="Plataforma" />
+                                                <h:outputLabel value="Carga Maxima:" for="cargaMaxima" />
+                                                <h:inputText class="form-control" id="cargaMaxima" value="#{beanTbbalanca.balanca.cargaMaxima}" title="CargaMaxima" />
+                                                <h:outputLabel value="Nr. Inmetro:" for="nrInmetro" />
+                                                <h:inputText class="form-control" id="nrInmetro" value="#{beanTbbalanca.balanca.nrInmetro}" title="NrInmetro" />
+                                                <h:outputLabel value="Data Fabricação:" for="dataFab" />
+                                                <h:inputText class="form-control" id="dataFab" value="#{beanTbbalanca.balanca.dataFab}" title="DataFab" >
+                                                    <f:convertDateTime pattern="MM/dd/yyyy" />
+                                                </h:inputText>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h:outputLabel value="Selo Reparado:" for="seloReparado" />
+                                                <h:inputText class="form-control" id="seloReparado" value="#{beanTbbalanca.balanca.seloReparado}" title="SeloReparado" />
+                                                <h:outputLabel value="Nr. Serie:" for="nrSerie" />
+                                                <h:inputText class="form-control" id="nrSerie" value="#{beanTbbalanca.balanca.nrSerie}" title="NrSerie" />
+                                                <h:outputLabel value="Cod. Balanca:" for="cdBalanca" />
+                                                <h:inputText class="form-control" id="cdBalanca" value="#{beanTbbalanca.balanca.cdBalanca}" title="CdBalanca" required="true" requiredMessage="The CdBalanca field is required."/>
+                                                <h:outputLabel value="Disponivel:" for="disponivel" />
+                                                <h:inputText class="form-control" id="disponivel" value="#{beanTbbalanca.balanca.disponivel}" title="Disponivel" />
+                                                <h:outputLabel value="Valor:" for="valor" />
+                                                <h:inputText class="form-control" id="valor" value="#{beanTbbalanca.balanca.valor}" title="Valor" />
+                                                <h:outputLabel value="Cod. Cliente-Balança:" for="cdClienteBalanca" />
+                                                <h:inputText class="form-control" id="cdClienteBalanca" value="#{beanTbbalanca.balanca.cdClienteBalanca}" title="CdClienteBalanca" required="true" requiredMessage="The CdClienteBalanca field is required."/>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </h:form>
+                        </f:view>
                         </div>
-                    </h:form>
-                </f:view>
+                        <div role="tabpanel" class="tab-pane active" id="consulta">
+                            Consulta
+                        </div>
+                    </div>
+              </div>
             </div>
         </div>
     </h:body>

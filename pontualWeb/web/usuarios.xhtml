@@ -4,13 +4,14 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
+        <script src="#{facesContext.externalContext.request.contextPath}/resources/vendor/js/jquery-3.1.1.min.js"></script>
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"></link>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"></link>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        
+
         <link rel="stylesheet" 	href="#{facesContext.externalContext.request.contextPath}/resources/css/styles.css"></link>
-        
+
         <title>Cadastro de Usuarios</title>
     </h:head>
     <h:body>
@@ -20,7 +21,7 @@
                     <div class="hidden-xs display-table-cell v-align box pull-left" id="navigation">
                         <div class="logo">
                             <h:link outcome="index"><img src="#{facesContext.externalContext.request.contextPath}/resources/images/scos.png" alt="scos_logo" class="hidden-xs hidden-sm"/></h:link>
-                                <img src="#{facesContext.externalContext.request.contextPath}/resources/images/scos.png" alt="scos_logo" class="visible-xs visible-sm circle-logo"/>
+                            <img src="#{facesContext.externalContext.request.contextPath}/resources/images/scos.png" alt="scos_logo" class="visible-xs visible-sm circle-logo"/>
                         </div>
                         <div class="navi">
                             <ul>
@@ -40,29 +41,44 @@
                     <header>
                         <h1 class="title">Usuários</h1>
                     </header>
-                </div>
-                <f:view>
-                    <h:form>
-                        <div class="row">
-                            <div class="container-fluid">
-                                <div class="col-md-6 form-group">
-                                    <h:outputLabel value="Id Usuario:" for="idUsuario" />
-                                    <h:inputText class="form-control" id="idUsuario" value="#{beanUsuario.usuario.idUsuario}" title="IdUsuario" required="true" requiredMessage="The IdUsuario field is required."/>
-                                    <h:outputLabel value="Usuario:" for="usuario" />
-                                    <h:inputText class="form-control" id="usuario" value="#{beanUsuario.usuario.usuario}" title="Usuario" required="true" requiredMessage="The Usuario field is required."/>
-                                    <h:outputLabel value="Senha:" for="senha" />
-                                    <h:inputText class="form-control" id="senha" value="#{beanUsuario.usuario.senha}" title="Senha" required="true" requiredMessage="The Senha field is required."/>
-                                    <h:outputLabel value="Bloqueado:" for="bloqueado" />
-                                    <h:inputText class="form-control" id="bloqueado" value="#{beanUsuario.usuario.bloqueado}" title="Bloqueado" />
-                                    <h:outputLabel value="Confirmar Senha:" for="confirmarSenha" />
-                                    <h:inputText class="form-control" id="confirmarSenha" value="#{beanUsuario.usuario.confirmarSenha}" title="ConfirmarSenha" required="true" requiredMessage="The ConfirmarSenha field is required."/>
-                                    <h:outputLabel value="Senha Sistema:" for="senhaSistema" />
-                                    <h:inputText class="form-control" id="senhaSistema" value="#{beanUsuario.usuario.senhaSistema}" title="SenhaSistema" required="true" requiredMessage="The SenhaSistema field is required."/>
-                                </div>
+                    <div>
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#consulta" aria-controls="consulta" role="tab" data-toggle="tab">Consulta</a></li>
+                            <li role="presentation"><a href="#cadastro" aria-controls="cadastro" role="tab" data-toggle="tab">Cadastro</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane" id="cadastro">
+                                <f:view>
+                                    <h:form>
+                                        <div class="row">
+                                            <div class="container-fluid">
+                                                <div class="col-md-6 form-group">
+                                                    <h:outputLabel value="Id Usuario:" for="idUsuario" />
+                                                    <h:inputText class="form-control" id="idUsuario" value="#{beanUsuario.usuario.idUsuario}" title="IdUsuario" required="true" requiredMessage="The IdUsuario field is required."/>
+                                                    <h:outputLabel value="Usuario:" for="usuario" />
+                                                    <h:inputText class="form-control" id="usuario" value="#{beanUsuario.usuario.usuario}" title="Usuario" required="true" requiredMessage="The Usuario field is required."/>
+                                                    <h:outputLabel value="Senha:" for="senha" />
+                                                    <h:inputText class="form-control" id="senha" value="#{beanUsuario.usuario.senha}" title="Senha" required="true" requiredMessage="The Senha field is required."/>
+                                                    <h:outputLabel value="Bloqueado:" for="bloqueado" />
+                                                    <h:inputText class="form-control" id="bloqueado" value="#{beanUsuario.usuario.bloqueado}" title="Bloqueado" />
+                                                    <h:outputLabel value="Confirmar Senha:" for="confirmarSenha" />
+                                                    <h:inputText class="form-control" id="confirmarSenha" value="#{beanUsuario.usuario.confirmarSenha}" title="ConfirmarSenha" required="true" requiredMessage="The ConfirmarSenha field is required."/>
+                                                    <h:outputLabel value="Senha Sistema:" for="senhaSistema" />
+                                                    <h:inputText class="form-control" id="senhaSistema" value="#{beanUsuario.usuario.senhaSistema}" title="SenhaSistema" required="true" requiredMessage="The SenhaSistema field is required."/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </h:form>
+                                </f:view>
+                            </div>
+                            <div role="tabpanel" class="tab-pane active" id="consulta">
+                                Consulta
                             </div>
                         </div>
-                    </h:form>
-                </f:view>
+                    </div>
+                </div>
             </div>
         </div>
     </h:body>

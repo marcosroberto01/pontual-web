@@ -30,7 +30,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Usuario.findByBloqueado", query = "SELECT t FROM Tbusuario t WHERE t.bloqueado = :bloqueado"),
     @NamedQuery(name = "Usuario.findByConfirmarSenha", query = "SELECT t FROM Tbusuario t WHERE t.confirmarSenha = :confirmarSenha"),
     @NamedQuery(name = "Usuario.findBySenhaSistema", query = "SELECT t FROM Tbusuario t WHERE t.senhaSistema = :senhaSistema")})
-public class Usuario implements Serializable {
+public class Usuario implements Serializable{
 
     private static final long serialVersionUID = 1L;
     @Id
