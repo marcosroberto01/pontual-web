@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
-        <script type="text/javascript" src="resources/vendor/js/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="#{facesContext.externalContext.request.contextPath}/resources/vendor/js/jquery-3.1.1.min.js"></script>
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"></link>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"></link>
@@ -27,7 +27,7 @@
                                 <li><h:link outcome="clientes" value ="Clientes"/></li>
                                 <li><h:link outcome="ordem-servico" value ="Ordens de Servico"/></li>
                                 <li><h:link outcome="balancas" value ="Balanças"/></li>
-                                <li><h:link outcome="detalhes" value ="Detalhes da Ordem de Serviço"/></li>
+                                <!--<li><h:link outcome="detalhes" value ="Detalhes da Ordem de Serviço"/></li>-->
                                 <li><h:link outcome="pecas" value ="Peças"/></li>
                                 <li><h:link outcome="usuarios" value ="Usuarios"/></li>
                             </ul>
@@ -38,7 +38,7 @@
             <div class="col-md-9 col-sm-10">
                 <div class="container-fluid">
                     <header>
-                        <h1 class="title">Relatório</h1>
+                        <h1 class="title">Controle de Ocorrências</h1>
                     </header>
                 </div>
             </div>

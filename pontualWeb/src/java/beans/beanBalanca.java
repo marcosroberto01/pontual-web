@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 import entidades.Balanca;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.Query;
 import util.JpaUtil;
 
 /**
@@ -56,9 +58,10 @@ public class beanBalanca {
     private void salvar(Balanca balanca) {
         EntityManager manager = JpaUtil.getManager();
         manager.getTransaction().begin();
-        manager.persist(balanca);
+        manager.merge(balanca);
         manager.getTransaction().commit();
         JpaUtil.fecharEntityManager(manager);
+        balanca = new Balanca();
     }
 
     public void salvar() {
@@ -67,11 +70,15 @@ public class beanBalanca {
 
     public void buscar() {
         EntityManager manager = JpaUtil.getManager();
+        Query query = manager.createNamedQuery("Balanca.findByCdBalanca")
+                .setParameter("cdBalanca", Integer.valueOf(busca));
         
-        balanca = (Balanca) manager.createNamedQuery("Balanca.findByCdBalanca")
-                .setParameter("cdBalanca", busca)
-                .getSingleResult();
-
+        
+        try {
+            balanca = (Balanca) query.getSingleResult();
+        } catch (NoResultException ex) {
+            balanca = new Balanca();
+        }
         JpaUtil.fecharEntityManager(manager);
     }
 }

@@ -27,7 +27,7 @@
                                 <li><h:link outcome="clientes" value ="Clientes"/></li>
                                 <li><h:link outcome="ordem-servico" value ="Ordens de Servico"/></li>
                                 <li><h:link outcome="balancas" value ="Balanças"/></li>
-                                <li><h:link outcome="detalhes" value ="Detalhes da Ordem de Serviço"/></li>
+                                <!--<li><h:link outcome="detalhes" value ="Detalhes da Ordem de Serviço"/></li>-->
                                 <li><h:link outcome="pecas" value ="Peças"/></li>
                                 <li><h:link outcome="usuarios" value ="Usuarios"/></li>
                             </ul>
@@ -99,7 +99,7 @@
                                     <h:form class="form-group">
                                         <div class="col-md-3">
                                             <h:outputLabel value="Busca" for="empresa"/>
-                                            <h:inputText class="form-control" value="#{beanBalanca.busca}"></h:inputText>
+                                            <h:inputText  class="form-control" value="#{beanBalanca.busca}"></h:inputText>
                                         </div>                                        
                                         
                                         <div class="col-md-3">
@@ -140,9 +140,6 @@
                                                 <h:outputLabel value="Cod. Cliente-Balança:" for="cdClienteBalanca" />
                                                 <h:inputText class="form-control" id="cdClienteBalanca" value="#{beanBalanca.balanca.cdClienteBalanca}" title="CdClienteBalanca" required="true" requiredMessage="The CdClienteBalanca field is required."/>
                                             </div>                                           
-                                        </div>
-                                        <div class="col-md-6">
-                                            <h:commandButton class="btn btn-block btn-success" value="Salvar" action="#{beanBalanca.salvar()}"></h:commandButton>
                                         </div>
                                     </div>
                                      </h:form>
