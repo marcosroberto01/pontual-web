@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <h:head>
         <script src="#{facesContext.externalContext.request.contextPath}/resources/vendor/js/jquery-3.1.1.min.js"></script>        
         <!-- Bootstrap -->
@@ -126,7 +127,100 @@
                                 </f:view>
                             </div>
                             <div role="tabpanel" class="tab-pane active" id="consulta">
-                                Consulta
+                                <div class="row container-fluid">
+                                    <h:form class="form-group">
+                                        <div class="col-md-3">
+                                            <h:outputLabel value="Busca" for="empresa"/>
+                                            <h:inputText class="form-control" value="#{beanCliente.busca}"></h:inputText>
+                                        </div>                                        
+                                        <div class="col-md-3">
+                                            <h:outputLabel value="Tipo de Busca"  for="empresa"/>  
+                                            <h:selectOneMenu class="form-control" id="pegasusFantasy" value="#{beanCliente.tipoBusca}">  
+                                                <f:selectItem itemValue="razaoSocial" itemLabel="Razão Social" /> 
+                                                <f:selectItem itemValue="nomeFantasia" itemLabel="Nome Fantasia" /> 
+                                            </h:selectOneMenu>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <h:outputLabel value="Realizar Busca" for="empresa"/>
+                                            <h:commandButton class="form-control btn btn-default" value="Buscar" action="#{beanCliente.buscar()}"></h:commandButton>
+                                        </div>
+                                    </h:form>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="col-md-12">
+                                        <div>
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <p class="lead">Dados da Empresa</p>
+                                                    <div>
+                                                        <div class="form-group col-md-6">
+                                                            <h:outputLabel class="" value="Código"/>
+                                                            <h:outputLabel class="form-control" value="#{beanCliente.cliente.codCliente}"/>
+                                                            <h:outputLabel value="Razao Social"/>
+                                                            <h:outputLabel class="form-control" value="#{beanCliente.cliente.razaoSocial}"/>
+                                                            <h:outputLabel value="NomeFantasia:"/>
+                                                            <h:outputLabel class="form-control" value="#{beanCliente.cliente.nomeFantasia}"/>
+                                                            <h:outputLabel value="Representante:"/>
+                                                            <h:outputLabel class="form-control" value="#{beanCliente.cliente.representante}"/>
+                                                        </div>   
+                                                        <div class="form-group col-md-6">
+                                                            <h:outputLabel value="Cgc/Cp:"/>
+                                                            <h:outputLabel class="form-control" value="#{beanCliente.cliente.cgcCpf}"/>
+                                                            <h:outputLabel value="Inscricao Estadual/RG"/>
+                                                            <h:outputLabel class="form-control" value="#{beanCliente.cliente.inscrEstadualRG}"/>
+                                                            <h:outputLabel value="TipoPessoa:"/>
+                                                            <h:outputLabel class="form-control" value="#{beanCliente.cliente.tipoPessoa}"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr></hr>
+                                                <div class="col-md-12">
+                                                    <p class="lead">Endereço</p>
+                                                    <div>
+                                                        <div class="form-group col-md-6">
+                                                            <h:outputLabel value="Endereco"/>
+                                                            <h:outputLabel class="form-control" value="#{beanCliente.cliente.endereco}"/>
+                                                            <h:outputLabel value="Numero"/>
+                                                            <h:outputLabel class="form-control" value="#{beanCliente.cliente.numero}"/>
+                                                            <h:outputLabel value="Complemento"/>
+                                                            <h:outputLabel class="form-control" value="#{beanCliente.cliente.complemento}"/>
+                                                            <h:outputLabel value="Bairro"/>
+                                                            <h:outputLabel class="form-control" value="#{beanCliente.cliente.bairro}"/>
+                                                        </div>   
+                                                        <div class="form-group col-md-6">
+                                                            <h:outputLabel value="Cidade"/>
+                                                            <h:outputLabel class="form-control" value="#{beanCliente.cliente.cidade}"/>
+                                                            <h:outputLabel value="Estado"/>
+                                                            <h:outputLabel class="form-control" value="#{beanCliente.cliente.estado}"/>
+                                                            <h:outputLabel value="Cep"/>
+                                                            <h:outputLabel class="form-control" value="#{beanCliente.cliente.cep}"/>                   
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr></hr>
+                                                <div class="col-md-12">
+                                                    <p class="lead">Contato</p>
+                                                    <div class="form-group col-md-6">
+                                                        <h:outputLabel value="Telefone1:"/>
+                                                        <h:outputLabel class="form-control" value="#{beanCliente.cliente.telefone1}"/>
+                                                        <h:outputLabel value="Telefone2:" />
+                                                        <h:outputLabel class="form-control" value="#{beanCliente.cliente.telefone2}"/>
+                                                        <h:outputLabel value="Telefone3:"/>
+                                                        <h:outputLabel class="form-control" value="#{beanCliente.cliente.telefone3}"/>
+                                                        <h:outputLabel value="Telefone4:"/>
+                                                        <h:outputLabel class="form-control" value="#{beanCliente.cliente.telefone4}"/>
+                                                    </div>   
+                                                    <div class="form-group col-md-6">
+                                                        <h:outputLabel value="Email:"/>
+                                                        <h:outputLabel class="form-control" value="#{beanCliente.cliente.email}"/>
+                                                        <h:outputLabel value="Observacao:"/>
+                                                        <h:outputLabel class="form-control" value="#{beanCliente.cliente.observacao}" />
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
