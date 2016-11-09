@@ -115,7 +115,7 @@
                                                     <f:selectItem itemLabel="Não" itemValue="n" />
                                                 </h:selectOneMenu>   
                                                 <h:outputLabel value="Troca Teclado:" for="trocaTeclado" />
-                                                <h:selectOneMenu value="#{beanOrdemServico.ordemdeservico.trocaTeclado}" id="revisaoCelulas" class="form-control">
+                                                <h:selectOneMenu value="#{beanOrdemServico.ordemdeservico.trocaTeclado}" id="trocaTeclado" class="form-control">
                                                     <f:selectItem itemLabel="Sim" itemValue="s" />
                                                     <f:selectItem itemLabel="Não" itemValue="n" />
                                                 </h:selectOneMenu>   
@@ -123,7 +123,7 @@
                                                 <h:selectOneMenu value="#{beanOrdemServico.ordemdeservico.calibracaoComparativa}" id="calibracaoComparativa" class="form-control">
                                                     <f:selectItem itemLabel="Sim" itemValue="s" />
                                                     <f:selectItem itemLabel="Não" itemValue="n" />
-                                                </h:selectOneMenu>   
+                                                </h:selectOneMenu>
                                                 <h:outputLabel value="Outros Servicos:" for="outrosServicos" />
                                                 <h:inputText class="form-control" id="outrosServicos" value="#{beanOrdemServico.ordemdeservico.outrosServicos}" title="OutrosServicos" />
                                                 <h:outputLabel value="Tecnico:" for="tecnico" />
@@ -147,11 +147,25 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-12    ">
+                                            <h:commandButton class="btn btn-block btn-success" value="Salvar" action="#{beanOrdemServico.salvar()}"></h:commandButton>
+                                        </div>
+                                    </div>           
                                 </h:form>
                             </f:view>
                         </div>
-                        <div role="tabpanel" class="tab-pane active" id="consulta">
-                            Consulta
+                        <div role="tabpanel" class="tab-pane  active" id="consulta">
+                            <h:dataTable value="#{beanOrdemServico.ordensdeservico}" var="orden">
+                                <h:column>
+                                    <f:facet name="header">Numero</f:facet>
+                                    <h:outputText value="#{orden.nrOs}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">Cliente</f:facet>
+                                    <h:outputText value="#{orden.cdCliente}"/>
+                                </h:column>
+                            </h:dataTable>
                         </div>
                     </div>
                 </div>

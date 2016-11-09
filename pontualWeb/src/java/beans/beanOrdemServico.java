@@ -9,6 +9,9 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import entidades.OrdemServico;
+import javax.annotation.PostConstruct;
+import javax.persistence.EntityManager;
+import util.JpaUtil;
 
 /**
  *
@@ -20,7 +23,28 @@ public class beanOrdemServico {
 
     private OrdemServico ordemdeservico = new OrdemServico();
     private List<OrdemServico> ordensdeservico = new ArrayList<>();
+    
+    @PostConstruct
+    private void init(){
+        carregarTodos();
+    }
+    
+    public void salvar(){
+        EntityManager manager = JpaUtil.getManager();
+        manager.getTransaction().begin();        
+        manager.persist(ordemdeservico);
+        manager.getTransaction().commit();
+        JpaUtil.fecharEntityManager(manager);
+        carregarTodos();
+        
+    }
 
+    private void carregarTodos(){
+            EntityManager manager = JpaUtil.getManager();
+            ordensdeservico = manager.createQuery("from OrdemServico", OrdemServico.class).getResultList();
+            JpaUtil.fecharEntityManager(manager);
+    }
+    
     public OrdemServico getOrdemdeservico() {
         return ordemdeservico;
     }
