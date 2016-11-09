@@ -23,9 +23,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "tbpecas")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Peca.findAll", query = "SELECT p FROM Peca p")
-    , @NamedQuery(name = "Peca.findByIdPeca", query = "SELECT p FROM Peca p WHERE p.idPeca = :idPeca")
-    , @NamedQuery(name = "Peca.findByDescricaoPeca", query = "SELECT p FROM Peca p WHERE p.descricaoPeca = :descricaoPeca")})
+
+@NamedQuery(name = "Peca.findAll", query = "SELECT p FROM Peca p")
+, @NamedQuery(name = "Peca.findByIdPeca", query = "SELECT p FROM Peca p WHERE p.idPeca = :idPeca")
+, @NamedQuery(name = "Peca.findByDescricaoPeca", query = "SELECT p FROM Peca p WHERE p.descricaoPeca = :descricaoPeca")})
+
 public class Peca implements Serializable {
 
     private static final long serialVersionUID = 1L;
