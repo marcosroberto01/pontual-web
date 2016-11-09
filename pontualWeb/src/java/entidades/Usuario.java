@@ -17,13 +17,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author guilherme
+ * @author Junio
  */
 @Entity
 @Table(name = "tbusuario")
 @XmlRootElement
 @NamedQueries({
-
     @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u")
     , @NamedQuery(name = "Usuario.findByIdUsuario", query = "SELECT u FROM Usuario u WHERE u.idUsuario = :idUsuario")
     , @NamedQuery(name = "Usuario.findByUsuario", query = "SELECT u FROM Usuario u WHERE u.usuario = :usuario")
@@ -52,9 +51,7 @@ public class Usuario implements Serializable {
     @Basic(optional = false)
     @Column(name = "SenhaSistema")
     private String senhaSistema;
-
-    private boolean logado;
-
+    
     public Usuario() {
     }
 
@@ -118,14 +115,6 @@ public class Usuario implements Serializable {
         this.senhaSistema = senhaSistema;
     }
 
-    public boolean isLogado() {
-        return logado;
-    }
-
-    public void setLogado(boolean logado) {
-        this.logado = logado;
-    }
-
     @Override
     public int hashCode() {
         int hash = 0;
@@ -150,5 +139,5 @@ public class Usuario implements Serializable {
     public String toString() {
         return "entidades.Usuario[ idUsuario=" + idUsuario + " ]";
     }
-
+    
 }

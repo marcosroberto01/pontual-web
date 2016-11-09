@@ -23,10 +23,10 @@
                 <h2 class="form-login-heading">Login</h2>
 
                 <label value="Usuário:" for="inputUsuario" class="sr-only"/>
-                <input type="user" id="inputUsuario" placeholder="Usuário" class="form-control" required="true" value="#{beanUsuario.usuario.usuario}"/>
+                <h:inputText id="inputUsuario"  class="form-control" required="true" value="#{beanUsuario.usuario.usuario}"/>
 
                 <label value="Senha:" for="inputSenha" class="sr-only"/>
-                <input type="password" id="inputSenha" placeholder="Senha" class="form-control" required="true" value="#{beanUsuario.usuario.senha}"/>
+                <h:inputText id="inputSenha" class="form-control" required="true" value="#{beanUsuario.usuario.senha}"/>
 
                        <div class="checkbox">
                        <label>
@@ -34,7 +34,7 @@
                     </label>
                     </div>
 
-                <h:commandButton value="Entrar" class="btn-lg btn-primary btn-block" action="#{beanUsuario.logar()}">Entrar</h:commandButton>
+                <h:commandButton value="Entrar" class="btn-lg btn-primary btn-block" action="#{beanUsuario.logar()}"></h:commandButton>
             </h:form>
         </div>
     </h:body>

@@ -12,7 +12,9 @@ import java.util.List;
 import entidades.Usuario;
 import javax.persistence.EntityManager;
 import util.JpaUtil;
- 
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+
 
 /**
  *
@@ -51,8 +53,35 @@ public class beanUsuario {
     public void setUsuarios(List<Usuario> usuarios) {
         this.usuarios = usuarios;
     }
-    
+
     public beanUsuario() {
+    }
+
+    public String logar() {
+        EntityManager manager = JpaUtil.getManager();
+        List<Usuario> listUsuarios = manager.createNamedQuery("Usuario.findByUsuario").setParameter("usuario", usuario.getUsuario()).getResultList();
+        JpaUtil.fecharEntityManager(manager);
+        for (Usuario usuarioBuscado : listUsuarios) {
+            if (usuarioBuscado != null && usuarioBuscado.getSenha().equals(usuario.getSenha())) {
+                usuario = usuarioBuscado;
+//                usuario.setLogado(true);
+                return "index?faces-redirect=true";
+            }
+        }
+
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Par login/senha inválido!"));
+        usuario = new Usuario();
+        return null;
+
+    }
+
+    public String logout() {
+//        usuario.setLogado(false);
+//        HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
+//        if (session != null) {
+//            session.invalidate();
+//        }
+        return "login?faces-redirect=true";
     }
 
 }
