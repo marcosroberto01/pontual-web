@@ -10,14 +10,39 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import entidades.Peca;
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ViewScoped;
+import javax.persistence.EntityManager;
+import util.JpaUtil;
  
 @ManagedBean
-@SessionScoped
+@ViewScoped
 public class beanPecas {
 
    private Peca peca = new Peca();
     private List<Peca> pecas = new ArrayList<>();
+    
+    @PostConstruct
+    private void init(){            
+        buscarTodos();
+    }
+    
+    public void salvar(){
+        EntityManager manager = JpaUtil.getManager();
+        manager.getTransaction().begin();        
+        manager.persist(peca);
+        manager.getTransaction().commit();
+        JpaUtil.fecharEntityManager(manager);
+        buscarTodos();
+        
+    }
 
+    private void buscarTodos(){
+        EntityManager manager = JpaUtil.getManager();
+            pecas = manager.createQuery("from Peca", Peca.class).getResultList();
+            JpaUtil.fecharEntityManager(manager);
+    }
+    
     public Peca getPeca() {
         return peca;
     }

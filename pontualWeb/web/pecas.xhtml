@@ -55,7 +55,7 @@
                                     <h:form>
                                         <div class="row">
                                             <div class="container-fluid">
-                                                <div class="col-md-6">
+                                                <div class="col-md-7">
                                                     <div class="form-group">
                                                         <h:outputLabel value="Id Peça:" for="idPeca" />
                                                         <h:inputText class="form-control" id="idPeca" value="#{beanPecas.peca.idPeca}" title="IdPeca" required="true" requiredMessage="The IdPeca field is required."/>
@@ -63,13 +63,25 @@
                                                         <h:inputText class="form-control" id="descricaoPeca" value="#{beanPecas.peca.descricaoPeca}" title="DescricaoPeca" required="true" requiredMessage="The DescricaoPeca field is required."/>
                                                     </div>
                                                 </div>
+                                                <div class="form-group col-md-7">
+                                                    <h:commandButton class="btn btn-block btn-success" value="Salvar" action="#{beanPecas.salvar()}"></h:commandButton>
+                                                </div>
                                             </div>
                                         </div>
                                     </h:form>
                                 </f:view>
                             </div>
                             <div role="tabpanel" class="tab-pane  active" id="consulta">
-                                Consulta
+                                <h:dataTable value="#{beanPecas.pecas}" var="p" class="table table-striped">
+                                    <h:column>
+                                        <f:facet name="header">Id</f:facet>
+                                        <h:outputText value="#{p.idPeca}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">Descricao</f:facet>
+                                        <h:outputText value="#{p.descricaoPeca}"/>
+                                    </h:column>
+                                </h:dataTable>
                             </div>
                         </div>
                     </div>
