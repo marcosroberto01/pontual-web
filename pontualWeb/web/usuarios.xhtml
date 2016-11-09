@@ -54,19 +54,18 @@
                                     <h:form>
                                         <div class="row">
                                             <div class="container-fluid">
-                                                <div class="col-md-6 form-group">
+                                                <div class="col-md-7 form-group">
                                                     <h:outputLabel value="Id Usuario:" for="idUsuario" />
                                                     <h:inputText class="form-control" id="idUsuario" value="#{beanUsuario.usuario.idUsuario}" title="IdUsuario" required="true" requiredMessage="The IdUsuario field is required."/>
                                                     <h:outputLabel value="Usuario:" for="usuario" />
                                                     <h:inputText class="form-control" id="usuario" value="#{beanUsuario.usuario.usuario}" title="Usuario" required="true" requiredMessage="The Usuario field is required."/>
                                                     <h:outputLabel value="Senha:" for="senha" />
                                                     <h:inputText class="form-control" id="senha" value="#{beanUsuario.usuario.senha}" title="Senha" required="true" requiredMessage="The Senha field is required."/>
-                                                    <h:outputLabel value="Bloqueado:" for="bloqueado" />
-                                                    <h:inputText class="form-control" id="bloqueado" value="#{beanUsuario.usuario.bloqueado}" title="Bloqueado" />
                                                     <h:outputLabel value="Confirmar Senha:" for="confirmarSenha" />
-                                                    <h:inputText class="form-control" id="confirmarSenha" value="#{beanUsuario.usuario.confirmarSenha}" title="ConfirmarSenha" required="true" requiredMessage="The ConfirmarSenha field is required."/>
-                                                    <h:outputLabel value="Senha Sistema:" for="senhaSistema" />
-                                                    <h:inputText class="form-control" id="senhaSistema" value="#{beanUsuario.usuario.senhaSistema}" title="SenhaSistema" required="true" requiredMessage="The SenhaSistema field is required."/>
+                                                    <h:inputText class="form-control" id="confirmaSenha" value="#{beanUsuario.usuario.confirmarSenha}" title="ConfirmacaoSenha" required="true" requiredMessage="A confirmação de senha é necessária."/>
+                                                </div>  
+                                                <div class="form-group col-md-7">
+                                                    <h:commandButton class="btn btn-block btn-default" value="Salvar" action="#{beanUsuario.salvar()}"></h:commandButton>
                                                 </div>
                                             </div>
                                         </div>
@@ -74,7 +73,12 @@
                                 </f:view>
                             </div>
                             <div role="tabpanel" class="tab-pane active" id="consulta">
-                                Consulta
+                                <h:dataTable value="#{beanUsuario.usuarios}" var="user">
+                                    <h:column>#{user.idUsuario}</h:column>
+                                    <h:column>#{user.usuario}</h:column>
+                                    <h:column>#{user.bloqueado}</h:column>
+                                    <h:column>#{user.logado}</h:column>
+                                </h:dataTable>
                             </div>
                         </div>
                     </div>
@@ -83,4 +87,3 @@
         </div>
     </h:body>
 </html>
-
